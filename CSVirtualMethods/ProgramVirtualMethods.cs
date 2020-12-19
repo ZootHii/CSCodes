@@ -1,4 +1,10 @@
-﻿using System;
+﻿/***
+
+AHMET 'ZootHii' YIlDIRIM
+
+***/
+
+using System;
 // works only for inheritance not interfaces
 namespace CSVirtualMethods
 {

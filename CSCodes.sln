@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVirtualMethods", "CSVirtu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSInterfaces", "CSInterfaces\CSInterfaces.csproj", "{F1BABAB6-ADDA-4FFC-B851-766465F64892}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameVectors", "GameVectors\GameVectors.csproj", "{3AEF5938-EC4F-4A45-B0AC-696CDDC89850}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{F1BABAB6-ADDA-4FFC-B851-766465F64892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1BABAB6-ADDA-4FFC-B851-766465F64892}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1BABAB6-ADDA-4FFC-B851-766465F64892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEF5938-EC4F-4A45-B0AC-696CDDC89850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEF5938-EC4F-4A45-B0AC-696CDDC89850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEF5938-EC4F-4A45-B0AC-696CDDC89850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEF5938-EC4F-4A45-B0AC-696CDDC89850}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
