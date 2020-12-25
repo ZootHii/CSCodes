@@ -1,8 +1,8 @@
-﻿/***
+﻿/*
+ 
+* AHMET 'ZootHii' YILDIRIM
 
-AHMET 'ZootHii' YIlDIRIM
-
-***/
+*/
 
 using System;
 
