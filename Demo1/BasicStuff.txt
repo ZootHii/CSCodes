@@ -1,0 +1,9 @@
+﻿Access Modifiers: 
+ - Private = it is the default type, we can only access from the block where its defined
+ - Public = we can access from everywhere
+ - Protected = we can access from its class and derived (extended, inherited) classes from this class
+ - Internal = can be accessed only from the same program, project (like .exe, .dll)
+
+Static: // C# Course 17.5
+    Used for common objects, things
+ - Static Class = Can not make an instance of that class
