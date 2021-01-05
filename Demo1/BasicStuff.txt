@@ -7,3 +7,11 @@
 Static: // C# Course 17.5
     Used for common objects, things
  - Static Class = Can not make an instance of that class
+ 
+ * Making instance means making new object (newlemek) and this process is expensive 
+ 
+Reference and Value Types:
+ - Reference Type = Classes, interfaces, abstracts, Strings, arrays, lists,
+ - Value Type = in C# (string is a value type), int
+ 
+ Type Safe = <string, int, ...> like (ArrayList<String> this is for java in C# List<string>) 
