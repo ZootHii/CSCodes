@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCollections", "CSCollecti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSExceptions", "CSExceptions\CSExceptions.csproj", "{B2406326-8C38-4689-89A3-9E3E092463D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoNetDemo", "AdoNetDemo\AdoNetDemo.csproj", "{DAD4FBD9-9C26-45CE-BDA7-33396F91FDBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +62,9 @@ Global
 		{B2406326-8C38-4689-89A3-9E3E092463D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2406326-8C38-4689-89A3-9E3E092463D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2406326-8C38-4689-89A3-9E3E092463D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD4FBD9-9C26-45CE-BDA7-33396F91FDBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD4FBD9-9C26-45CE-BDA7-33396F91FDBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD4FBD9-9C26-45CE-BDA7-33396F91FDBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD4FBD9-9C26-45CE-BDA7-33396F91FDBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
