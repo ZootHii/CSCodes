@@ -63,6 +63,15 @@ namespace AdoNetDemo
             //return dataTable;
             return products;
         }
+        
+        private void ConnectionControl()
+        {
+            // I can use try catch but in course he did not
+            if (_connection.State == ConnectionState.Closed)
+            {
+                _connection.Open();
+            }
+        }
 
         public void Add(Product product)
         {
@@ -78,13 +87,34 @@ namespace AdoNetDemo
             _connection.Close(); // don't forget to close
         }
         
-        private void ConnectionControl()
+        public void Update(Product product)
         {
-            // I can use try catch but in course he did not
-            if (_connection.State == ConnectionState.Closed)
-            {
-                _connection.Open();
-            }
+            ConnectionControl();
+            const string query = 
+                "UPDATE etrade.product SET Name=@name, UnitPrice=@unitPrice, StockAmount=@stockAmount WHERE ID=@id";
+            
+            var command = new MySqlCommand(query, _connection);
+            command.Parameters.AddWithValue("@id", product.Id);
+            command.Parameters.AddWithValue("@name", product.Name);
+            command.Parameters.AddWithValue("@unitPrice", product.UnitPrice);
+            command.Parameters.AddWithValue("@stockAmount", product.StockAmount);
+            
+            command.ExecuteNonQuery();
+            
+            _connection.Close(); // don't forget to close
+        }
+        
+        public void Delete(int id)
+        {
+            ConnectionControl();
+            const string query = 
+                "DELETE FROM etrade.product WHERE ID=@id";
+            
+            var command = new MySqlCommand(query, _connection);
+            command.Parameters.AddWithValue("@id", id);
+            command.ExecuteNonQuery();
+            
+            _connection.Close(); // don't forget to close
         }
         
     }

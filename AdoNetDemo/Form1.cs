@@ -38,7 +38,38 @@ namespace AdoNetDemo
                 StockAmount = Convert.ToInt32(textBox_StockAmount.Text)
             });
             dataGridView_Product.DataSource = _productDal.GetAll(); // refresh dataGridView
-            MessageBox.Show("Product Added!");
+            //MessageBox.Show("Product Added!");
+        }
+
+        private void dataGridView_Product_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox_NameUpdate.Text = dataGridView_Product.CurrentRow.Cells[1].Value.ToString();
+            textBox_UnitPriceUpdate.Text = dataGridView_Product.CurrentRow.Cells[2].Value.ToString();
+            textBox_StockAmountUpdate.Text = dataGridView_Product.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void button_UpdateProduct_Click(object sender, EventArgs e)
+        {
+            
+            Product product = new Product
+            {
+                Id = Convert.ToInt32(dataGridView_Product.CurrentRow.Cells[0].Value),
+                Name = textBox_NameUpdate.Text,
+                UnitPrice = Convert.ToDecimal(textBox_UnitPriceUpdate.Text),
+                StockAmount = Convert.ToInt32(textBox_StockAmountUpdate.Text)
+            };
+            _productDal.Update(product);
+            dataGridView_Product.DataSource = _productDal.GetAll(); // refresh dataGridView
+            textBox_NameUpdate.Text = null;
+            textBox_UnitPriceUpdate.Text = null;
+            textBox_StockAmountUpdate.Text = null;
+        }
+
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dataGridView_Product.CurrentRow.Cells[0].Value);
+            _productDal.Delete(id);
+            dataGridView_Product.DataSource = _productDal.GetAll(); // refresh dataGridView
         }
     }
 }
