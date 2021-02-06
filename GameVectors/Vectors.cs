@@ -86,6 +86,11 @@ namespace GameVectors
             
             return new Vector {x = vector1.x + vector2.x, y = vector1.y + vector2.y};
         }
+
+        public static double DotProduct(Vector a, Vector b)
+        {
+            return (a.x * b.x) + (a.y * b.y); // dot product formula
+        }
         
     }
     
@@ -171,6 +176,7 @@ namespace GameVectors
             Console.WriteLine("Length Added1: " + added.Length());
             Console.WriteLine("Added2: " + "(" + added2.X  + "," + added2.Y + ")");
             Console.WriteLine("Length Added2: " + added2.Length());
+
         }
     }
 }
