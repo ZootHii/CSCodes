@@ -1,7 +1,7 @@
 ﻿
 // DAL = Data access layer
 
-// in this project I used MySQL server not SQL Server with JetBrains Rider
+// in this project I used MySQL server and SQL Server with JetBrains Rider
 
 /*
 // for sql server connection the same way with mySql // integrated security=true means connect with windows authentication
@@ -20,6 +20,7 @@ using System.Data;
 using System.Runtime.InteropServices;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace AdoNetDemo
 {
@@ -27,26 +28,28 @@ namespace AdoNetDemo
     {
         private const string connectionString = @"server=localhost;user=root;database=etrade;port=3306;password=root";
         private readonly MySqlConnection _connection = new MySqlConnection(connectionString);
+
+        private const string connectionStringSQL = @"Server= localhost; Database= AdventureWorks2019; Integrated Security=True;";
+        private readonly SqlConnection _connectionSQL = new SqlConnection(connectionStringSQL);
         
         public /*DataTable*/ List<Product> GetAll()
         {
             ConnectionControl();
             const string query = "SELECT * FROM etrade.product";
+            const string querySQL = "SELECT * FROM AdventureWorks2019.HumanResources.Department";
+
             var command = new MySqlCommand(query, _connection);
             var dataReader = command.ExecuteReader();
 
+            var commandSQL = new SqlCommand(querySQL, _connectionSQL);
+            var dataReaderSQL = commandSQL.ExecuteReader();
+
             //var dataTable = new DataTable(); // we are gonna return back to List because no one use them anymore
             //dataTable.Load(dataReader);
-
+            
             var products = new List<Product>();
             while (dataReader.Read())
             {
-                // This code did not work IDK why
-                /*product = new Product(Convert.ToInt32(dataReader["ID"]), 
-                 dataReader["Name"].ToString(), 
-                 Convert.ToDecimal(dataReader["UnitPrice"]),
-                 Convert.ToInt32(dataReader["StockAmount"]));*/
-
                 var product = new Product
                 {
                  Id = Convert.ToInt32(dataReader["ID"]), 
@@ -56,10 +59,19 @@ namespace AdoNetDemo
                 };
                 products.Add(product);
             }
+            
+            while (dataReaderSQL.Read())
+            {
+                // To see these values change project->properties-> (To console app)
+                Console.WriteLine(dataReaderSQL["Name"].ToString());
+            }
+            
 
             dataReader.Close();/* after you done close them */
             _connection.Close();
 
+            dataReaderSQL.Close();
+            _connectionSQL.Close();
             //return dataTable;
             return products;
         }
@@ -70,6 +82,10 @@ namespace AdoNetDemo
             if (_connection.State == ConnectionState.Closed)
             {
                 _connection.Open();
+            }
+            if (_connectionSQL.State == ConnectionState.Closed)
+            {
+                _connectionSQL.Open();
             }
         }
 
