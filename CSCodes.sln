@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSCoffeeCompanyCustomerMana
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSGameCompanyManagement", "CSGameCompanyManagement\CSGameCompanyManagement.csproj", "{12779A55-3C58-4C98-963F-0FFBFFF1ED10}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_SQLServer", "CS_SQLServer\CS_SQLServer.csproj", "{FD788701-526F-410D-9BF3-07B36B6A62D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,5 +98,9 @@ Global
 		{12779A55-3C58-4C98-963F-0FFBFFF1ED10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12779A55-3C58-4C98-963F-0FFBFFF1ED10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12779A55-3C58-4C98-963F-0FFBFFF1ED10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD788701-526F-410D-9BF3-07B36B6A62D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD788701-526F-410D-9BF3-07B36B6A62D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD788701-526F-410D-9BF3-07B36B6A62D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD788701-526F-410D-9BF3-07B36B6A62D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
