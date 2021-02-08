@@ -5,9 +5,15 @@ using CSGameCompanyManagement.Entities;
 
 namespace CSGameCompanyManagement.Businesses
 {
-    public class ProductManager : CheckCustomer, IProductService
+    public class ProductManager : IProductService
     {
-        public List<Product> products = new List<Product>();
+        public readonly List<Product> products = new List<Product>();
+        private readonly ICheckCustomerService _checkCustomerService;
+
+        public ProductManager(ICheckCustomerService checkCustomerService)
+        {
+            _checkCustomerService = checkCustomerService;
+        }
 
         public void Add(Product product)
         {
@@ -16,13 +22,13 @@ namespace CSGameCompanyManagement.Businesses
         
         public void Sell(Product product, Customer customer)
         {
-            if (CheckIfRealCustomer(customer) && products.Contains(product))
+            if (_checkCustomerService.CheckIfRealCustomer(customer) && products.Contains(product))
             {
                 Console.WriteLine(product.Name + " sold to " + customer.FirstName);
             }
             else
             {
-                Console.WriteLine("Cannot sell not a valid person or product.");
+                Console.WriteLine("Cannot sell not a valid person.");
             }
         }
     }

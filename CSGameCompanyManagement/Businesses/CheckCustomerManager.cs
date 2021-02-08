@@ -1,9 +1,10 @@
 ﻿using System;
+using CSGameCompanyManagement.Abstracts;
 using CSGameCompanyManagement.Entities;
 
-namespace CSGameCompanyManagement.Abstracts
+namespace CSGameCompanyManagement.Businesses
 {
-    public abstract class CheckCustomer : ICheckCustomerService
+    public class CheckCustomerManager : ICheckCustomerService
     {
         public bool CheckIfRealCustomer(Customer customer)
         {

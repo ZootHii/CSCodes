@@ -5,16 +5,24 @@ using CSGameCompanyManagement.Entities;
 
 namespace CSGameCompanyManagement.Businesses
 {
-    public class CustomerManager : CheckCustomer, ICustomerService
+    public class CustomerManager : ICustomerService
     {
-        public List<Customer> customers = new List<Customer>();
+        public readonly List<Customer> customers = new List<Customer>();
+        private readonly ICheckCustomerService _checkCustomerService;
+
+        public CustomerManager(ICheckCustomerService checkCustomerService)
+        {
+            _checkCustomerService = checkCustomerService;
+        }
+
 
         public void Save(Customer customer)
         {
-            if (CheckIfRealCustomer(customer))
+            if (_checkCustomerService.CheckIfRealCustomer(customer))
             {
                 customers.Add(customer);
                 Console.WriteLine("Saved: " + customer.FirstName);
+                Console.WriteLine("Total Customers: " + customers.Count);
             }
             else
             {

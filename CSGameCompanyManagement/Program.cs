@@ -4,7 +4,7 @@ using CSGameCompanyManagement.Entities;
 
 namespace CSGameCompanyManagement
 {
-    internal class Program
+    internal static class Program
     {
         public static void Main(string[] args)
         {
@@ -47,12 +47,12 @@ namespace CSGameCompanyManagement
             
             Console.WriteLine("--------------------------");
             Console.WriteLine("Add Customer");
-            var customerManager = new CustomerManager();
+            var customerManager = new CustomerManager(new CheckCustomerManager());
             customerManager.Save(customer1);
             customerManager.Save(customer2);
 
             Console.WriteLine("Add Product");
-            var productManager = new ProductManager();
+            var productManager = new ProductManager(new CheckCustomerManager());
             productManager.Add(product1);
             productManager.Add(product2);
             
