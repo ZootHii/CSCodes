@@ -1,7 +1,8 @@
-﻿using CSGameCompanyManagement.Abstracts;
+﻿
+using CSGameCompanyManagement.Abstract;
 using CSGameCompanyManagement.Entities;
 
-namespace CSGameCompanyManagement.Businesses
+namespace CSGameCompanyManagement.Concrete
 {
     public class CampaignManager : ICampaignService
     {

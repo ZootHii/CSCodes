@@ -38,14 +38,14 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Abstracts\ICampaignService.cs" />
-        <Compile Include="Abstracts\ICheckCustomerService.cs" />
-        <Compile Include="Abstracts\ICustomerService.cs" />
-        <Compile Include="Abstracts\IProductService.cs" />
-        <Compile Include="Businesses\CampaignManager.cs" />
-        <Compile Include="Businesses\CheckCustomerManager.cs" />
-        <Compile Include="Businesses\CustomerManager.cs" />
-        <Compile Include="Businesses\ProductManager.cs" />
+        <Compile Include="Abstract\ICampaignService.cs" />
+        <Compile Include="Abstract\ICheckCustomerService.cs" />
+        <Compile Include="Abstract\ICustomerService.cs" />
+        <Compile Include="Abstract\IProductService.cs" />
+        <Compile Include="Concrete\CampaignManager.cs" />
+        <Compile Include="Concrete\CheckCustomerManager.cs" />
+        <Compile Include="Concrete\CustomerManager.cs" />
+        <Compile Include="Concrete\ProductManager.cs" />
         <Compile Include="Entities\Campaign.cs" />
         <Compile Include="Entities\Customer.cs" />
         <Compile Include="Entities\Product.cs" />

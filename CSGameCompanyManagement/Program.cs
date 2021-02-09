@@ -1,5 +1,7 @@
-﻿using System;
-using CSGameCompanyManagement.Businesses;
+﻿/* AHMET 'ZootHii' YILDIRIM */
+
+using System;
+using CSGameCompanyManagement.Concrete;
 using CSGameCompanyManagement.Entities;
 
 namespace CSGameCompanyManagement

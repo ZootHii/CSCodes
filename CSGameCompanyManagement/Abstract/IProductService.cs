@@ -1,6 +1,6 @@
 ﻿using CSGameCompanyManagement.Entities;
 
-namespace CSGameCompanyManagement.Abstracts
+namespace CSGameCompanyManagement.Abstract
 {
     public interface IProductService
     {
